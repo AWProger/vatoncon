@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Acquista - VATICANCOIN{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h1 class="text-center mb-0">Acquista VATICANCOIN</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-5">
+                        <div class="col-md-6">
+                            <h2 class="text-vatican-gold mb-4">Come Acquistare</h2>
+                            <div class="steps">
+                                <div class="step mb-4">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h3>Registrati su un Exchange</h3>
+                                        <p>Scegli uno dei nostri exchange partner e crea un account.</p>
+                                    </div>
+                                </div>
+                                <div class="step mb-4">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h3>Deposita Fondi</h3>
+                                        <p>Effettua un deposito utilizzando il metodo di pagamento preferito.</p>
+                                    </div>
+                                </div>
+                                <div class="step mb-4">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h3>Acquista VATIC</h3>
+                                        <p>Scambia i tuoi fondi con VATICANCOIN.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="price-card text-center p-4">
+                                <h3 class="text-vatican-gold mb-4">Prezzo Attuale</h3>
+                                <div class="price-value mb-3">
+                                    <span class="h1">$0.0001</span>
+                                </div>
+                                <div class="price-change mb-4">
+                                    <span class="text-success">+5.2%</span> nelle ultime 24h
+                                </div>
+                                <a href="#" class="btn btn-vatican btn-lg">Acquista Ora</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-vatican-gold mb-4">Exchange Disponibili</h2>
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="exchange-card">
+                                        <img src="{% static 'images/exchange1.png' %}" alt="Exchange 1" class="img-fluid mb-3">
+                                        <h3>Exchange 1</h3>
+                                        <a href="#" class="btn btn-vatican">Vai all'Exchange</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="exchange-card">
+                                        <img src="{% static 'images/exchange2.png' %}" alt="Exchange 2" class="img-fluid mb-3">
+                                        <h3>Exchange 2</h3>
+                                        <a href="#" class="btn btn-vatican">Vai all'Exchange</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="exchange-card">
+                                        <img src="{% static 'images/exchange3.png' %}" alt="Exchange 3" class="img-fluid mb-3">
+                                        <h3>Exchange 3</h3>
+                                        <a href="#" class="btn btn-vatican">Vai all'Exchange</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .text-vatican-gold {
+        color: var(--vatican-gold);
+    }
+    
+    .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        background: var(--vatican-gold);
+        color: var(--vatican-black);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    
+    .price-card {
+        background: rgba(0, 0, 0, 0.5);
+        border: 2px solid var(--vatican-gold);
+        border-radius: 15px;
+    }
+    
+    .exchange-card {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--vatican-gold);
+        border-radius: 10px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .exchange-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %} 

@@ -10,6 +10,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('buy/', views.buy, name='buy'),
     path('contact/', views.contact, name='contact'),
+    path('minigame/', views.minigame, name='minigame'),
 ]
 
 if settings.DEBUG:

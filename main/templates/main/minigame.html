@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mini-Game - VATICANCOIN{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h1 class="my-4">Кликай Коин!</h1>
+
+    <img src="{% static 'images/coin.png' %}" alt="Vatican Coin" id="clickable-coin" style="width: 150px; height: 150px; cursor: pointer; transition: transform 0.1s ease;">
+
+    <h2 class="mt-3">Счет: <span id="score">0</span></h2>
+    <p class="mt-2">Очков за клик: <span id="points-per-click">1</span></p>
+    <p class="text-muted">Набери 100 очков для увеличения силы клика!</p>
+
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        box-sizing: border-box;
+    }
+
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+    }
+
+    .bg-image {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        filter: brightness(0.7) blur(1px);
+    }
+
+    /* Стили для мини-игры */
+    #clickable-coin {
+        width: 200px; /* Увеличим размер монетки для кликера */
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    h1, h2, p {
+        color: white; /* Убедимся, что текст белый */
+    }
+
+
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const coin = document.getElementById('clickable-coin');
+    const scoreDisplay = document.getElementById('score');
+    const pointsPerClickDisplay = document.getElementById('points-per-click');
+    let score = localStorage.getItem('vatican_coin_game_score') ? parseInt(localStorage.getItem('vatican_coin_game_score')) : 0;
+    let pointsPerClick = localStorage.getItem('vatican_coin_game_points_per_click') ? parseInt(localStorage.getItem('vatican_coin_game_points_per_click')) : 1;
+
+    scoreDisplay.textContent = score;
+    pointsPerClickDisplay.textContent = pointsPerClick;
+
+    coin.addEventListener('click', () => {
+        score += pointsPerClick;
+        scoreDisplay.textContent = score;
+        localStorage.setItem('vatican_coin_game_score', score);
+
+        // Увеличение очков за клик при достижении определенного счета
+        if (score >= 100 && pointsPerClick === 1) {
+            pointsPerClick = 5; // Увеличиваем очки за клик
+            pointsPerClickDisplay.textContent = pointsPerClick;
+            localStorage.setItem('vatican_coin_game_points_per_click', pointsPerClick);
+            alert('Сила клика увеличена! Теперь вы получаете 5 очков за клик!');
+        } else if (score >= 500 && pointsPerClick === 5) {
+             pointsPerClick = 10; // Увеличиваем очки за клик
+             pointsPerClickDisplay.textContent = pointsPerClick;
+             localStorage.setItem('vatican_coin_game_points_per_click', pointsPerClick);
+             alert('Сила клика увеличена! Теперь вы получаете 10 очков за клик!');
+         }
+
+        // Добавляем небольшую анимацию при клике
+        coin.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            coin.style.transform = 'scale(1)';
+        }, 100);
+    });
+
+    // Сброс игры (для тестирования)
+    // function resetGame() {
+    //     localStorage.removeItem('vatican_coin_game_score');
+    //     localStorage.removeItem('vatican_coin_game_points_per_click');
+    //     window.location.reload();
+    // }
+</script>
+{% endblock %} 

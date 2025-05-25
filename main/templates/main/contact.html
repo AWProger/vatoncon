@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contatti - VATICANCOIN{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h1 class="text-center mb-0">Contattaci</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="text-vatican-gold mb-4">Informazioni di Contatto</h2>
+                            <div class="contact-info">
+                                <div class="contact-item mb-4">
+                                    <i class="fas fa-map-marker-alt fa-2x text-vatican-gold mb-2"></i>
+                                    <h3>Indirizzo</h3>
+                                    <p>Vatican City, 00120</p>
+                                </div>
+                                <div class="contact-item mb-4">
+                                    <i class="fas fa-envelope fa-2x text-vatican-gold mb-2"></i>
+                                    <h3>Email</h3>
+                                    <p>info@vaticancoin.com</p>
+                                </div>
+                                <div class="contact-item mb-4">
+                                    <i class="fas fa-phone fa-2x text-vatican-gold mb-2"></i>
+                                    <h3>Telefono</h3>
+                                    <p>+39 06 6988 0000</p>
+                                </div>
+                            </div>
+                            
+                            <div class="social-links mt-5">
+                                <h2 class="text-vatican-gold mb-4">Seguici</h2>
+                                <div class="d-flex gap-3">
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-twitter fa-2x"></i>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-telegram fa-2x"></i>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-discord fa-2x"></i>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-medium fa-2x"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h2 class="text-vatican-gold mb-4">Invia un Messaggio</h2>
+                            <form class="contact-form">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Oggetto</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Messaggio</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-vatican">Invia Messaggio</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .text-vatican-gold {
+        color: var(--vatican-gold);
+    }
+    
+    .contact-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+    
+    .contact-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .social-link {
+        color: var(--vatican-gold);
+        transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+        color: white;
+        transform: translateY(-3px);
+    }
+    
+    .form-control {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--vatican-gold);
+        color: white;
+    }
+    
+    .form-control:focus {
+        background: rgba(0, 0, 0, 0.5);
+        border-color: var(--vatican-gold);
+        color: white;
+        box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
+    }
+    
+    .form-label {
+        color: var(--vatican-gold);
+    }
+</style>
+{% endblock %} 

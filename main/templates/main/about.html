@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Chi Siamo - VATICANCOIN{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h1 class="text-center mb-0">Chi Siamo</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="{% static 'images/vatican-about.jpg' %}" alt="Vatican" class="img-fluid rounded mb-4">
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="text-vatican-gold mb-4">La Nostra Missione</h2>
+                            <p class="lead">VATICANCOIN è più di una semplice criptovaluta. È un ponte tra la tradizione millenaria del Vaticano e l'innovazione tecnologica moderna.</p>
+                            <p>La nostra missione è creare un ecosistema finanziario che rifletta i valori di trasparenza, fiducia e sostenibilità, principi fondamentali della Chiesa Cattolica.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <h2 class="text-vatican-gold mb-4">I Nostri Valori</h2>
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-handshake fa-3x mb-3 text-vatican-gold"></i>
+                                            <h3>Fiducia</h3>
+                                            <p>Costruiamo relazioni basate sulla fiducia e la trasparenza.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-leaf fa-3x mb-3 text-vatican-gold"></i>
+                                            <h3>Sostenibilità</h3>
+                                            <p>Promuoviamo uno sviluppo sostenibile e responsabile.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-users fa-3x mb-3 text-vatican-gold"></i>
+                                            <h3>Comunità</h3>
+                                            <p>Valorizziamo la forza della comunità e della collaborazione.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .text-vatican-gold {
+        color: var(--vatican-gold);
+    }
+    
+    .card {
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %} 

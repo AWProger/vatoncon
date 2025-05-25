@@ -50,3 +50,6 @@ def contact(request):
     Представление для страницы контактов
     """
     return render(request, 'main/contact.html')
+
+def minigame(request):
+    return render(request, 'main/minigame.html')
