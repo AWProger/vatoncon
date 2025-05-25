@@ -17,45 +17,14 @@
 {% endblock %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/global_styles.css' %}">
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        width: 100vw;
-        overflow-x: hidden;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        box-sizing: border-box;
-    }
-
-    .background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-    }
-
-    .bg-image {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        filter: brightness(0.7) blur(1px);
-    }
-
     /* Стили для мини-игры */
     #clickable-coin {
         width: 200px; /* Увеличим размер монетки для кликера */
         height: 200px;
         margin-bottom: 20px;
     }
-
-    h1, h2, p {
-        color: white; /* Убедимся, что текст белый */
-    }
-
-
 </style>
 {% endblock %}
 
