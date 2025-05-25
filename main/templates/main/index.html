@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaticanCoin</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon-ico.png' %}">
+</head>
+<body>
+    <!-- Фоновое изображение Ватикана -->
+    <div class="background">
+        <img src="{% static 'images/vatican-bg.jpg' %}" alt="Sfondo Vaticano" class="bg-image">
+    </div>
+    <!-- Подключение модулей (блоков) -->
+    {% include "main/blocks/hero.html" %}
+    {% include "main/blocks/features.html" %}
+    {% include "main/blocks/buy_instruction.html" %}
+    {% include "main/blocks/exchanges.html" %}
+    {% include "main/blocks/contract.html" %}
+    {% include "main/blocks/tokenomics.html" %}
+    {% include "main/blocks/footer.html" %}
+</body>
+</html> 

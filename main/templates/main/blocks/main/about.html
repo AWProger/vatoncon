@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% block title %}Chi Siamo - VATICANCOIN{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <!-- Заголовок -->
+        <div class="card mb-5">
+            <div class="card-body text-center">
+                <h1 class="display-4 mb-4" style="color: var(--vatican-gold);">Chi Siamo</h1>
+                <p class="lead">La Prima Criptovaluta Benedetta dal Vaticano</p>
+            </div>
+        </div>
+
+        <!-- О проекте -->
+        <div class="card mb-5">
+            <div class="card-header">
+                <h2 class="h4 mb-0">La Nostra Missione</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-4">
+                            VATICANCOIN nasce dalla visione di unire la tradizione millenaria del Vaticano 
+                            con l'innovazione della tecnologia blockchain. La nostra missione è creare 
+                            una criptovaluta che rappresenti i valori di fede, fiducia e innovazione.
+                        </p>
+                        <p>
+                            Con il supporto della comunità globale, stiamo costruendo un ecosistema 
+                            finanziario che combina la saggezza secolare con le opportunità del futuro.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-dark">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">I Nostri Valori</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">✨ Fede e Innovazione</li>
+                                    <li class="mb-3">🌍 Comunità Globale</li>
+                                    <li class="mb-3">🔒 Sicurezza e Trasparenza</li>
+                                    <li class="mb-3">💫 Crescita Sostenibile</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Команда -->
+        <div class="card mb-5">
+            <div class="card-header">
+                <h2 class="h4 mb-0">Il Nostro Team</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <img src="/static/images/team1.jpg" alt="Team Member" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                                <h3 class="h5">Cardinale Marco</h3>
+                                <p class="text-muted">Consigliere Spirituale</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <img src="/static/images/team2.jpg" alt="Team Member" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                                <h3 class="h5">Dott. Giovanni</h3>
+                                <p class="text-muted">Esperto Blockchain</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <img src="/static/images/team3.jpg" alt="Team Member" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                                <h3 class="h5">Prof. Maria</h3>
+                                <p class="text-muted">Stratega Finanziaria</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Дорожная карта -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="h4 mb-0">Roadmap</h2>
+            </div>
+            <div class="card-body">
+                <div class="timeline">
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <h3 class="h5 text-gold">Q1 2024</h3>
+                        </div>
+                        <div class="col-md-9">
+                            <ul>
+                                <li>Lancio ufficiale di VATICANCOIN</li>
+                                <li>Listing su PancakeSwap e Uniswap</li>
+                                <li>Sviluppo della comunità</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <h3 class="h5 text-gold">Q2 2024</h3>
+                        </div>
+                        <div class="col-md-9">
+                            <ul>
+                                <li>Partnership strategiche</li>
+                                <li>Sviluppo dell'ecosistema</li>
+                                <li>Integrazione con nuovi exchange</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3 class="h5 text-gold">Q3-Q4 2024</h3>
+                        </div>
+                        <div class="col-md-9">
+                            <ul>
+                                <li>Espansione globale</li>
+                                <li>Nuove funzionalità e utility</li>
+                                <li>Eventi e conferenze</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.text-gold {
+    color: var(--vatican-gold);
+}
+.timeline ul {
+    list-style: none;
+    padding-left: 0;
+}
+.timeline ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+.timeline ul li:before {
+    content: "•";
+    color: var(--vatican-gold);
+    position: absolute;
+    left: 0;
+}
+</style>
+{% endblock %} 

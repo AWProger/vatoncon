@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block title %}Contatti - VATICANCOIN{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <!-- Заголовок -->
+        <div class="card mb-5">
+            <div class="card-body text-center">
+                <h1 class="display-4 mb-4" style="color: var(--vatican-gold);">Contattaci</h1>
+                <p class="lead">Siamo qui per aiutarti</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Контактная форма -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">Invia un Messaggio</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nome</label>
+                                <input type="text" class="form-control bg-dark text-light" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control bg-dark text-light" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Oggetto</label>
+                                <input type="text" class="form-control bg-dark text-light" id="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Messaggio</label>
+                                <textarea class="form-control bg-dark text-light" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-vatican">Invia Messaggio</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Контактная информация -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">Informazioni di Contatto</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <h3 class="h5 mb-3">Indirizzo</h3>
+                            <p class="mb-0">
+                                Città del Vaticano<br>
+                                Piazza San Pietro, 00120<br>
+                                Città del Vaticano
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <h3 class="h5 mb-3">Email</h3>
+                            <p class="mb-0">
+                                <a href="mailto:info@vaticancoin.io" class="text-light">info@vaticancoin.io</a><br>
+                                <a href="mailto:support@vaticancoin.io" class="text-light">support@vaticancoin.io</a>
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <h3 class="h5 mb-3">Social Media</h3>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="btn btn-vatican">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </a>
+                                <a href="#" class="btn btn-vatican">
+                                    <i class="fab fa-telegram"></i> Telegram
+                                </a>
+                                <a href="#" class="btn btn-vatican">
+                                    <i class="fab fa-discord"></i> Discord
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">Domande Frequenti</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item bg-dark">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        Come posso acquistare VATICANCOIN?
+                                    </button>
+                                </h3>
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Puoi acquistare VATICANCOIN su PancakeSwap o Uniswap. Visita la nostra pagina "Acquista" per istruzioni dettagliate.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-dark">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        Qual è il contratto di VATICANCOIN?
+                                    </button>
+                                </h3>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Il contratto di VATICANCOIN è: 0x1234...5678. Assicurati sempre di verificare l'indirizzo del contratto prima di effettuare qualsiasi transazione.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+.accordion-button:not(.collapsed) {
+    background-color: var(--vatican-purple);
+    color: var(--vatican-gold);
+}
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--vatican-gold);
+}
+.form-control:focus {
+    background-color: var(--vatican-black);
+    border-color: var(--vatican-gold);
+    color: white;
+    box-shadow: none;
+}
+</style>
+{% endblock %} 

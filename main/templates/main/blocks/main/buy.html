@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}Acquista VATICANCOIN{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <!-- Заголовок -->
+        <div class="card mb-5">
+            <div class="card-body text-center">
+                <h1 class="display-4 mb-4" style="color: var(--vatican-gold);">Acquista VATICANCOIN</h1>
+                <p class="lead">Scegli la piattaforma più adatta a te per acquistare VATIC</p>
+            </div>
+        </div>
+
+        <!-- Список бирж -->
+        <div class="row">
+            {% for exchange in exchanges %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        <h3 class="h5 mb-0">{{ exchange.name }}</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <img src="/static/images/{{ exchange.icon }}" alt="{{ exchange.name }}" class="img-fluid mb-3" style="max-height: 100px;">
+                        <p class="mb-4">{{ exchange.description }}</p>
+                        <a href="{{ exchange.url }}" target="_blank" class="btn btn-vatican w-100">Vai a {{ exchange.name }}</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Инструкции -->
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2 class="h4 mb-0">Istruzioni per l'Acquisto</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="h5 mb-3">Per Principianti:</h3>
+                        <ol>
+                            <li class="mb-3">Crea un wallet MetaMask o Trust Wallet</li>
+                            <li class="mb-3">Acquista ETH o BNB su una piattaforma come Binance</li>
+                            <li class="mb-3">Trasferisci i token al tuo wallet</li>
+                            <li class="mb-3">Vai su PancakeSwap o Uniswap</li>
+                            <li class="mb-3">Incolla l'indirizzo del contratto VATIC</li>
+                            <li class="mb-3">Seleziona l'importo da acquistare</li>
+                            <li class="mb-3">Conferma la transazione</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h5 mb-3">Informazioni Importanti:</h3>
+                        <div class="alert alert-warning">
+                            <h4 class="h6">Attenzione!</h4>
+                            <ul class="mb-0">
+                                <li>Verifica sempre l'indirizzo del contratto</li>
+                                <li>Non condividere mai le tue chiavi private</li>
+                                <li>Fai attenzione alle truffe</li>
+                                <li>Investi solo ciò che puoi permetterti di perdere</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4">
+                            <h4 class="h6">Contratto VATIC:</h4>
+                            <code class="d-block p-2 bg-dark text-light rounded">0x1234...5678</code>
+                            <button class="btn btn-sm btn-vatican mt-2" onclick="copyContract()">Copia Indirizzo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function copyContract() {
+    const contractAddress = '0x1234...5678';
+    navigator.clipboard.writeText(contractAddress).then(() => {
+        alert('Indirizzo copiato negli appunti!');
+    });
+}
+</script>
+{% endblock %} 

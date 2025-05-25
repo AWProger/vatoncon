@@ -1,0 +1,19 @@
+<!-- Модуль: адрес контракта и кнопка скопировать -->
+<div class="contract-block">
+    <h2>Indirizzo del Contratto</h2>
+    <div class="contract-address">
+        <span id="contract-address">0xDeaa62Ad6fea194D214e8F5b28253006589569C3</span>
+        <button onclick="copyContract()" class="copy-btn">Copia</button>
+    </div>
+    <div class="contract-links">
+        <a href="https://bscscan.com/address/0xDeaa62Ad6fea194D214e8F5b28253006589569C3" target="_blank">Vedi su BscScan</a>
+    </div>
+</div>
+<script>
+// Кнопка копирования адреса контракта
+function copyContract() {
+    const addr = document.getElementById('contract-address').innerText;
+    navigator.clipboard.writeText(addr);
+    alert('Indirizzo copiato!');
+}
+</script> 
